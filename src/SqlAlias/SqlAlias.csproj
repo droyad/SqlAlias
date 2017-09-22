@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.3;netstandard2.0;net40</TargetFrameworks>
+    <AssemblyName>SqlAlias</AssemblyName>
+    <RootNamespace>SqlAlias</RootNamespace>
+    <PackageId>SqlAlias</PackageId>
+    <Description>SqlAlias applies alias definitions from the registry to the server portion of a Microsoft SQL Server connection string</Description>
+    <Authors>droyad</Authors>
+    <PackageProjectUrl>https://github.com/droyad/SqlAlias</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/droyad/SqlAlias</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.4.0" />
+  </ItemGroup>
+  
+</Project>
