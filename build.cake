@@ -72,7 +72,7 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
 {
-        DotNetCoreTest("./src/Assent.Tests/Assent.Tests.csproj", new DotNetCoreTestSettings
+        DotNetCoreTest("./src/SqlAlias.Tests/SqlAlias.Tests.csproj", new DotNetCoreTestSettings
         {
             Configuration = configuration,
             NoBuild = true,
@@ -97,7 +97,7 @@ Task("PushPackages")
     .IsDependentOn("Pack")
     .Does(() =>
 {
-    var package = $"{artifactsDir}/Assent.{nugetVersion}.nupkg";
+    var package = $"{artifactsDir}/SqlAlias.{nugetVersion}.nupkg";
     var localPackagesDir = "../LocalPackages";
 
     if(DirectoryExists(localPackagesDir))
