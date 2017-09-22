@@ -7,8 +7,9 @@ do this](https://github.com/dotnet/corefx/issues/2575) by default.
 
 The code is based on [user2771704's StackOverflow answer](https://stackoverflow.com/a/45330995/10784).
 
-
 ## Usage
+
+Install the [SqlAlias package](https://www.nuget.org/packages/SqlAlias) from NuGet
 
 ```
 using SqlAlias;
