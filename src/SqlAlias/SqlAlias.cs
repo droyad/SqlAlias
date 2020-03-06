@@ -22,11 +22,7 @@ namespace SqlAlias
                 {
                     var builder = new SqlConnectionStringBuilder(connectionString);
 
-                    var key = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE") == "x86"
-                        ? @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo"
-                        : @"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo";
-
-                    var newSource = (string)Microsoft.Win32.Registry.GetValue(key, builder.DataSource, null);
+                    var newSource = (string)Microsoft.Win32.Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo", builder.DataSource, null);
                     if (newSource != null)
                         builder.DataSource = newSource.Substring(newSource.IndexOf(',') + 1);
 
