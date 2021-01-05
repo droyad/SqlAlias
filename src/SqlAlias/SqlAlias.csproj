@@ -14,10 +14,9 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
-  
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.4.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
   </ItemGroup>
   
 </Project>
