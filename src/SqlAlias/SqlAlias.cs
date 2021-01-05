@@ -1,7 +1,7 @@
 using System;
 #if !NET40
+using Microsoft.Data.SqlClient;
 using System.Runtime.InteropServices;
-using System.Data.SqlClient;
 #endif
 
 namespace SqlAlias
