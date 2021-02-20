@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.1;net5.0</TargetFrameworks>
     <AssemblyName>SqlAlias</AssemblyName>
     <RootNamespace>SqlAlias</RootNamespace>
     <PackageId>SqlAlias</PackageId>
@@ -9,12 +9,11 @@
     <Authors>droyad</Authors>
     <PackageProjectUrl>https://github.com/droyad/SqlAlias</PackageProjectUrl>
     <RepositoryUrl>https://github.com/droyad/SqlAlias</RepositoryUrl>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>CA1416</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-  </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
     <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
   </ItemGroup>

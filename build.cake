@@ -53,7 +53,7 @@ Task("Clean")
 });
 
 Task("Restore")
-    .Does(() => DotNetCoreRestore("."));
+    .Does(() => DotNetCoreRestore("./src"));
 
 
 Task("Build")
@@ -61,28 +61,27 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
 {
-    DotNetCoreBuild(".", new DotNetCoreBuildSettings
+    DotNetCoreBuild("./src", new DotNetCoreBuildSettings
     {
         Configuration = configuration,
         ArgumentCustomization = args => args.Append($"/p:Version={nugetVersion}")
     });
 });
-/*
+
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
 {
-        DotNetCoreTest("./src/SqlAlias.Tests/SqlAlias.Tests.csproj", new DotNetCoreTestSettings
+        DotNetCoreTest("./src/Tests/Tests.csproj", new DotNetCoreTestSettings
         {
             Configuration = configuration,
-            NoBuild = true,
-            ArgumentCustomization = args => args.Append("-l trx")
+            NoBuild = true
         });
 });
-*/
+
 
 Task("Pack")
-    .IsDependentOn("Build")
+    .IsDependentOn("Test")
     .Does(() =>
 {
     DotNetCorePack(projectToPackage, new DotNetCorePackSettings
