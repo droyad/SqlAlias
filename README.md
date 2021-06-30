@@ -14,7 +14,7 @@ Install the [SqlAlias package](https://www.nuget.org/packages/SqlAlias) from NuG
 ```
 using SqlAlias;
 
-Aliases.Map(myConnectionString)
+myConnectionString = Aliases.Map(myConnectionString)
 ```
 
 Changes are only made to the connection string if the OS is Windows and if it is running on the .NET Core runtime.
