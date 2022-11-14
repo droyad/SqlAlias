@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
   </ItemGroup>
   
