@@ -1,18 +1,11 @@
 using System;
-#if !NET40
 using Microsoft.Data.SqlClient;
 using System.Runtime.InteropServices;
-
-#endif
 
 namespace SqlAlias
 {
     public static class Aliases
     {
-#if NET40
-        public static string Map(string connectionString) => connectionString;
-        internal static bool ShouldSubstitute() => false;
-#else
         public static string Map(string connectionString)
         {
             if (!ShouldSubstitute())
@@ -37,7 +30,5 @@ namespace SqlAlias
         internal static bool ShouldSubstitute()
             => RuntimeInformation.IsOSPlatform(OSPlatform.Windows) &&
                !RuntimeInformation.FrameworkDescription.StartsWith(".NET Framework");
-
-#endif
     }
 }
