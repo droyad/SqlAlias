@@ -5,6 +5,6 @@ build_script:
 test: off
 environment:
   NuGetApiKey:
-    secure: X/FKrPSng11wJT2sftZNAft9SJsR4Y5iyXh6qoYPpzYHQdHsurxutRZoW14//Hgd
+    secure: dNBS1sr4s9a1DGizMCbgv1yVCXR+q4f2aD9f6xKBwV+70sEGREDkYOzQcMZrjR2y
 artifacts:
 - path: artifacts\**\*.*

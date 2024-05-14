@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/droyad/SqlAlias</RepositoryUrl>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>CA1416</NoWarn>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
