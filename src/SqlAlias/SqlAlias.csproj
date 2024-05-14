@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net40;netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>SqlAlias</AssemblyName>
     <RootNamespace>SqlAlias</RootNamespace>
     <PackageId>SqlAlias</PackageId>
@@ -14,8 +14,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' != 'net40' ">
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.2" />
+  <ItemGroup >
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
   </ItemGroup>
   
